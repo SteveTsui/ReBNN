@@ -7,12 +7,8 @@ from timm.models.registry import register_model
 import math
 import torch
 from torch.nn import Parameter
-from torch.nn.modules.conv import _ConvNd
 import collections
-from itertools import repeat
-from torch.nn import Parameter
 from torch.nn.modules.conv import _ConvNd
-import collections
 from itertools import repeat
 
 threshold = [1e-5, 2e-4]
@@ -115,7 +111,7 @@ class Binarization(torch.autograd.Function):
         grad_scale_2 = torch.sum(torch.sum(torch.sum(target2,keepdim=True,dim=3),keepdim=True, dim=2),keepdim=True,dim=1)
 
         gradscale = grad_scale_1 - para_loss * grad_scale_2
-        return gradWeight, gradscale, None
+        return gradweight, gradscale, None
 
 class BiConv(_ConvNd):
     '''
