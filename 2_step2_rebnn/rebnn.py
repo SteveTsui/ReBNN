@@ -139,7 +139,7 @@ class BiConv(_ConvNd):
         self.out_channels = out_channels
         self.init_state = 0
         
-    def self.generate_scaling_factor(self):
+    def generate_scaling_factor(self):
         self.scaling_factor = Parameter(torch.randn(self.out_channels, 1, 1, 1))
 
     def forward(self, x):
