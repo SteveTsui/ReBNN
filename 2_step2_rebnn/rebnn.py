@@ -117,7 +117,7 @@ class Binarization(torch.autograd.Function):
         gradscale = grad_scale_1 - para_loss * grad_scale_2
         return gradWeight, gradscale, None
 
-class MConv(_ConvNd):
+class BiConv(_ConvNd):
     '''
     Baee layer class for modulated convolution
     '''
@@ -130,7 +130,7 @@ class MConv(_ConvNd):
         stride = _pair(stride)
         padding = _pair(padding)
         dilation = _pair(dilation)
-        super(MConv, self).__init__(
+        super(BiConv, self).__init__(
             in_channels, out_channels, kernel_size, stride, padding, dilation,
             False, _pair(0), groups, bias, padding_mode='zeros')
 
@@ -159,7 +159,7 @@ class BasicBlock(nn.Module):
 
         self.move0 = LearnableBias(inplanes)
         self.binary_activation = BinaryActivation()
-        self.binary_conv = MConv(inplanes, planes, stride=stride, padding=1,bias=False, kernel_size=3)
+        self.binary_conv = BiConv(inplanes, planes, stride=stride, padding=1,bias=False, kernel_size=3)
         self.bn1 = nn.BatchNorm2d(planes)
         self.move1 = LearnableBias(planes)
         self.prelu = nn.PReLU(planes)
