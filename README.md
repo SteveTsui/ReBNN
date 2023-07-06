@@ -33,10 +33,13 @@ bash run.sh
 If you find this work useful in your research, please consider to cite:
 
 ```
-@article{xu2023resilient,
+@inproceedings{xu2023resilient,
   title={Resilient Binary Neural Network},
-  author={Xu, Sheng and Li, Yanjing and Ma, Teli and Lin, Mingbao and Dong, Hao and Zhang, Baochang and Gao, Peng and Lv, Jinhu},
-  journal={arXiv preprint arXiv:2302.00956},
+  author={Xu, Sheng and Li, Yanjing and Ma, Teli and Lin, Mingbao and Dong, Hao and Zhang, Baochang and Gao, Peng and Lu, Jinhu},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={37},
+  number={9},
+  pages={10620--10628},
   year={2023}
 }
 ```
