@@ -7,7 +7,7 @@ from timm.models.registry import register_model
 import math
 import torch
 from torch.nn import Parameter
-import collections
+import collections.abc as collections
 from torch.nn.modules.conv import _ConvNd
 from itertools import repeat
 
